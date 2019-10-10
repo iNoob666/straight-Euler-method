@@ -48,15 +48,15 @@ for j in h:
         yEuler.append(methodOfEuler(j, yEuler[i], xEuler[i]))
         xAnalytic.append(xAnalytic[i] + j)
         yAnalytic.append(analytic(xAnalytic[i + 1]))
-        h1Fault.append(abs(yEuler[i] - yAnalytic[i]))
+        h1Fault.append(abs(yEuler[i + 1] - yAnalytic[i + 1]))
 
         xEulerModified.append(xEuler[i] + j)
         yEulerModified.append(methodOfEulerModified(j, yEuler[i], xEuler[i]))
-        h2Fault.append(abs(yEulerModified[i] - yAnalytic[i]))
+        h2Fault.append(abs(yEulerModified[i + 1] - yAnalytic[i + 1]))
 
         xEulerImproved.append(xEuler[i] + j)
         yEulerImproved.append(methodOfEulerImproved(j, yEuler[i], xEuler[i]))
-        h3Fault.append(abs(yEulerImproved[i] - yAnalytic[i]))
+        h3Fault.append(abs(yEulerImproved[i + 1] - yAnalytic[i + 1]))
 
     xEuler.append(float(0))
     xEulerModified.append(float(0))
